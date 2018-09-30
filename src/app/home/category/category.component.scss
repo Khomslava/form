@@ -1,0 +1,30 @@
+@import '../../../variables';
+
+.container {
+    max-width: 100%;
+    padding: 0 5%;
+
+    .row{
+        .project-image-wrapper{
+            margin-bottom: 20px;
+
+            .project-image-box {
+                background-color: white;
+                height: 35vh;
+                width: 100%;
+
+                .project-image {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                //  transition: all 1s ease;
+                } 
+
+                .project-image:hover {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+}

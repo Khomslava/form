@@ -1,0 +1,11 @@
+<div class="create-category">
+  <div *ngFor="let lang of langs; let i=index">
+    <div>Язык <span class="lang-name">{{lang.name}}</span></div>
+    <div class="once-data">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Название" #name (keyup)="langs[i].category = name.value">
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-button (click)="createCategory()">Сохранить</button>
+</div>

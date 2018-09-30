@@ -1,0 +1,24 @@
+@import '../../../variables';
+.container {
+  max-width: 100%;
+  padding: 0 5%;
+  .row {
+    padding: 4vh 0 0 0;
+    margin: 0;
+    .links {
+      margin-top: 5vh;
+      position: relative;
+      left: -7px;
+      .link {
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          color: $main-color-text;
+        }
+        &:hover {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

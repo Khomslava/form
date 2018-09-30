@@ -1,0 +1,28 @@
+ .nav {
+   font-family: T-star-regular, Arial, Helvetica, sans-serif;
+   font-size: 18px;
+   margin: 25px 5%;
+   .nav-page {
+     margin-left: 20px;
+     cursor: pointer;
+     text-decoration: none;
+     color: black;
+   }
+   .nav-page:hover {
+     font-weight: 600;
+   }
+   .nav-page.active {
+     font-weight: 900;
+   }
+   .choose-language {
+     margin-left: 20px;
+     cursor: pointer;
+     color: black;
+     background-color: white;
+     border: 0;
+   }
+ }
+
+ .content {
+     padding: 20px 70px;
+ }

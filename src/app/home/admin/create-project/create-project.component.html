@@ -1,0 +1,56 @@
+<div class="create-project">
+  <div class="title">Создать новый проект</div>
+  <div class="content">
+
+    <div class="once-data" fxLayout="row" fxLayoutAlign="start center">
+      <mat-form-field>
+        <mat-select placeholder="Выбор категорий" multiple [(ngModel)]="project['categoryId']">
+          <mat-option *ngFor="let category of categories" [value]="category.catId">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Год окончания" [(ngModel)]="project['year']">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Квадратура, м2" [(ngModel)]="project['square']">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="project['showInMainPages']">Показывать на главной странице</mat-checkbox>
+    </div>
+
+    <div class="other-langs">
+      <div *ngFor="let lang of langs; let i=index" fxLayout="column" fxLayoutAlign="start stretch">
+        <div class="row row-lang">
+          <span>Язык</span>&nbsp;
+          <span class="lang-name">  {{lang.name}}</span>
+        </div>
+        <div class="row">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Имя проекта" [(ngModel)]="project['translate'][i]['name']">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Страна" [(ngModel)]="project['translate'][i]['country']">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Город" [(ngModel)]="project['translate'][i]['city']">
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="description">
+            <textarea matInput placeholder="Описание" [(ngModel)]="project['translate'][i]['description']"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <app-upload-images
+      (uploadedBigImages)="uploadedBigImages($event)"
+      (uploadedMobImages)="uploadedMobImages($event)"
+    ></app-upload-images>
+    
+
+
+    <button mat-button (click)="createProject()">Сохранить</button>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container-photos" >
+  <div class="form-group">
+    <span class="title-photos-upload">Загрузить большие фотографии</span>
+
+    <mat-radio-group (change)="showMainImageBig($event.value)" dndDropzone (dndDrop)="onDropBig($event, imagesSrcBig)" dndEffectAllowed="move" class="upload-photos-box">
+      <div class="down-place" dndPlaceholderRef>
+        Переместить сюда
+      </div>
+   
+      <div *ngFor="let image of imagesSrcBig; let i = index">
+        <div [dndDraggable]="image" [dndEffectAllowed]="'move'" [dndDisableIf]="false" (dndStart)="onDragStartBig(i)">
+            <div dndDragImageRef class="photo">
+              <img src="{{image.url}}">
+              <mat-radio-button class="radio-button-main-page" [value]="i" [checked]="i === 0"></mat-radio-button>
+              <div class="remove-image" (click)="removeImageBig(i)">
+                <mat-icon>delete</mat-icon>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="upload-photos">
+        <input type="file" (change)="handleFilesBig($event)"  multiple id="fileBig">
+        <label for="fileBig"></label>
+        <mat-icon>add</mat-icon>
+      </div>
+
+    </mat-radio-group>
+  </div>
+
+</div>
+<div class="container-photos">
+  <div class="form-group">
+    <span class="title-photos-upload">Загрузить маленькие фотографии</span>
+
+    <mat-radio-group (change)="showMainImageMob($event.value)" dndDropzone (dndDrop)="onDropMob($event, imagesSrcMob)" dndEffectAllowed="move"
+      class="upload-photos-box">
+      <div class="down-place" dndPlaceholderRef>
+        Переместить сюда
+      </div>
+
+      <div *ngFor="let image of imagesSrcMob; let i = index">
+        <div [dndDraggable]="image" [dndEffectAllowed]="'move'" [dndDisableIf]="false" (dndStart)="onDragStartMob(i)">
+          <div dndDragImageRef class="photo">
+            <img src="{{image.url}}">
+            <mat-radio-button class="radio-button-main-page" [value]="i" [checked]="i === 0"></mat-radio-button>
+            <div class="remove-image" (click)="removeImageMob(i)">
+              <mat-icon>delete</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upload-photos">
+        <input type="file" (change)="handleFilesMob($event)" multiple id="fileMob">
+        <label for="fileMob"></label>
+        <mat-icon>add</mat-icon>
+      </div>
+
+    </mat-radio-group>
+  </div>
+
+</div>

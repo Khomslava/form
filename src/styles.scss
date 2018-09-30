@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face { 
+    font-family: "T-star-regular";
+    font-style: normal;
+    font-weight: 300;
+    src: url("./assets/fonts/T-Star-regular-webfont.woff.ttf");
+ }
+
+ @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+ body {
+    //cursor: [url('путь к курсору'),]
+    font-family: T-star-regular, Roboto, Arial, Helvetica,sans-serif;
+    color: rgb(81, 81, 81);
+ }

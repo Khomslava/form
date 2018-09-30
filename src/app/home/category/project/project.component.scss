@@ -1,0 +1,51 @@
+@import '../../../../variables';
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 5%;
+
+    .row{
+        margin: 0;
+
+        &.title-project {
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+
+        &.content{
+            .description {
+                margin: 10px 0 0 0;
+                padding: 0;
+                text-align: justify;
+            }
+
+            .left-block {
+                margin: 10px 0 0 0;
+                padding: 0 10px 0 0;
+            }
+        }
+
+        &.project-images {
+            margin-top: 3vh;
+                .project-image-wrapper {
+                    margin: 0 0 5vh 0;
+                    padding: 0;
+
+                    .photo-image-box {
+                        height: 100%;
+                        width: 100%;
+
+                        .photo-image {
+                            height: 80vh;
+                            width: 100%;
+                            object-fit: cover;
+                        } 
+
+                    }
+                }
+        }
+    }
+}

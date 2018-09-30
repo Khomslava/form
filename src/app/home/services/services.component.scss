@@ -1,0 +1,14 @@
+@import '../../../variables';
+.container {
+  max-width: 100%;
+  padding: 0 5%;
+  .main-image {
+    width: 50vw;
+    object-fit: cover;
+    margin: 0 30px 10px 0;
+    float: right; 
+  }
+  .content-text {
+    text-align: justify;
+  }
+}

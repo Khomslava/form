@@ -1,0 +1,203 @@
+:host {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    box-shadow: none;
+    padding: 0;
+
+    .container {
+        padding: 0;
+        margin: 0 5%;
+        min-width: 90%;
+    }
+
+    .navbar-collapse {
+        position: relative;
+        right: -7px;
+    }
+
+    .nav-link {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: white;
+        transition: none !important;
+
+        &:hover{
+            color: black !important;
+        }
+    }
+
+    .ng-star-inserted {
+        position: relative;
+        right: -7px;
+    }
+
+    // .collapse.show {
+    //     height: auto !important;
+    //     transition: none !important;
+
+    //     .nav {
+    //         margin: 0;
+    //     }
+    //     .nav-link {
+    //         transition: none !important;
+
+    //         font-size: 14px;
+    //     }
+    //     .nav-page {
+    //       margin-left: 10px;
+    //     }
+    // }
+}
+
+mdb-navbar-brand {
+    position: relative;
+    left: -12px;
+}
+
+.header {
+
+   // height: 80px;
+    .logo {
+        cursor: pointer;
+        border: none;
+        outline: 0;
+
+        .logo-img {
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        .logo-name {
+ 
+            .logo-name-form {
+                font-size: 30px;
+                line-height: 30px;
+            }
+            .logo-name-bureau
+            {
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 1.1px;
+                margin-left: 1px;
+            }
+        }
+    }
+
+    .nav {
+        width: 100%;
+        font-size: 18px;
+        margin: 0;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            padding: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: 300;
+ 
+            &:active,
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+
+        .nav-page {
+            margin-left: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-page:hover {
+            font-weight: 600;
+            opacity: 1;
+            color: black;
+
+        }
+
+        .nav-page.active {
+            font-weight: 600;
+            opacity: 1;
+            color: black;
+        }
+
+        .choose-language {
+            margin-left: 10px;
+            cursor: pointer;
+            color: black;
+            background-color: white;
+            border: 0;
+        }
+    }
+}
+
+.main-content {
+    margin-top: 10px;
+}
+
+
+
+.mat-menu-header {
+    min-width: 40px;
+    
+    &.ng-trigger {
+       min-width: 40px;
+    }
+
+    button {
+        height: 35px;
+        border: none;
+        outline: none;
+
+        // &:hover {
+        //   font-weight: 300;
+        // }
+
+    }
+
+    .mat-menu-item{
+        height: 35px;
+        border: none;
+        line-height: 35px;
+    }
+
+    .mat-menu-content:not(:empty) {
+        padding: 0;
+    }
+}
+
+.custom-class {
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    right: 20px;
+    bottom: 50px;
+    border: none;
+    font-size: 25px;
+    z-index: 10;
+    padding: 0;
+    cursor: pointer;
+    
+    &:active,
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &:hover{
+        background-color:#e0e0e0;
+    }
+
+    i {
+        font-size: 30px;
+        margin: auto;
+        padding-top: 3px;
+    }
+}
