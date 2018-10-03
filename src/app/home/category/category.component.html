@@ -1,15 +1,10 @@
 <div class="container">
   <div class="row">
     <div *ngFor="let project of projects" class="col-12 col-md-6 col-lg-4 project-image-wrapper">
-      <div class="project-image-box">
-        <!-- <ng-template ngFor let-photo [ngForOf]="project.photos"> -->
-           <!-- <ng-template [ngIf]="photo.showOnMainPage"> -->
-            <img class="project-image" [src]="project?.photos[1]?.url" alt="project alt" (click)="goToProject(project)">
-           <!-- </ng-template> -->
-        <!-- </ng-template> -->
-      </div>
+        <app-view-load-image class="project-image-box">
+          <img class="project-image" (click)="goToProject(project)" *ngIf [src]="project?.photos[1]?.url" alt="project alt" >
+        </app-view-load-image>
       <div class="name-project">{{project?.translate[languageId].name}}</div>
     </div>
-
   </div>
 </div>

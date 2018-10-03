@@ -1,23 +1,32 @@
-<div class="container">
-  <div class="row title-project" fxLayout="row" fxLayoutAlign="center start" *ngIf="project?.translate">
-    <span>{{project?.translate[languageId].name}}</span>
+<div *ngIf="!projectTranslate || !projectTranslate" class="spinner-wrapper">
+<mat-spinner class="spinner" diameter="50"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="projectTranslate && projectTranslate">
+  <div class="row title-project" fxLayout="row" fxLayoutAlign="center start">
+    <span>{{project.translate[languageId]?.name}}</span>
   </div>
-  <div class="row content" *ngIf="project?.translate">
+  <div class="row content">
     <div class="col-12 col-sm-4 col-md-3 left-block">
-      <div>{{projectTranslate[languageId]?.country}}: {{project?.translate[languageId].country}}</div>
-      <div>{{projectTranslate[languageId]?.city}}: {{project?.translate[languageId].city}}</div>
-      <div>{{projectTranslate[languageId]?.square}}: {{project?.square}} m<sup>2</sup></div>
-      <div>{{projectTranslate[languageId]?.year}}: {{project?.year}}</div>
+      <div>{{projectTranslate[languageId]?.country}}: {{project.translate[languageId]?.country}}</div>
+      <div>{{projectTranslate[languageId]?.city}}: {{project.translate[languageId]?.city}}</div>
+      <div>{{projectTranslate[languageId]?.square}}: {{project.square}} m
+        <sup>2</sup>
+      </div>
+      <div>{{projectTranslate[languageId]?.year}}: {{project.year}}</div>
     </div>
     <div class="col-12 col-sm-8 col-md-9 description" *ngIf="project?.translate">
-      {{project?.translate[languageId].description}}
+      {{project.translate[languageId]?.description}}
     </div>
   </div>
   <div class="row project-images">
     <div *ngFor="let photo of project?.photos" class="col-12 project-image-wrapper">
-      <div class="photo-image-box">
-        <img class="photo-image" [src]="photo?.url" alt="photo alt">
+      <div class="photo-image-box" *ngIf="photo?.url">
+        <app-view-load-image>
+          <img *ngIf class="photo-image" [src]="photo.url" alt="photo alt">
+        </app-view-load-image>
       </div>
+
     </div>
   </div>
 </div>

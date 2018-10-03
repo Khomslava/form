@@ -19,6 +19,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GoTopButtonModule } from 'ng2-go-top-button';
 
 // import { AgmCoreModule } from '@agm/core';
@@ -66,6 +67,7 @@ export const firebaseConfig = environment.firebaseConfig;
     AppRoutingModule,
     HttpClientModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
     GoTopButtonModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,

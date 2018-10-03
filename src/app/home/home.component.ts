@@ -12,7 +12,7 @@ import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public langs = [];
-  private currentLanguage;
+  public currentLanguage;
   public headerTitles;
   private headerTitlesAll;
 

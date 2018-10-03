@@ -1,14 +1,10 @@
 <div class="content">
-  <mdb-carousel [isControls]="fasle" [animation]="'fade'" [interval]="5000" class="carousel slide carousel-fade">
+  <mdb-carousel [isControls]="true" [animation]="'fade'" [interval]="4000" class="carousel slide carousel-fade">
     <mdb-slide *ngFor="let project of projects">
       <div class="view">
-        <img class="d-block w-100 slide-image" [src]="project?.photos[1]?.url" alt="slide alt">
+        <img class="d-block w-100 slide-image" [src]="project?.photos[1]?.url" alt="slide alt" (click)="goToProject(project)">
         <div class="mask  waves-light" mdbWavesEffect (click)="goToProject(project)"></div>
       </div>
-      <!-- <div class="carousel-caption">
-        <h3 class="h3-responsive">Text1</h3>
-        <p>Text 2</p>
-      </div> -->
     </mdb-slide>
   </mdb-carousel>
 </div>

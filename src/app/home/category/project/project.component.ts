@@ -1,6 +1,6 @@
 // import { SeoService } from './../../../shares/services/seo.service';
 import { ServicesService } from './../../../shares/services/services.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivationEnd, Params, Data, NavigationStart, NavigationEnd,
             Event as NavigationEvent, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -13,7 +13,8 @@ const PROJECT_KEY = makeStateKey<any>('project');
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectComponent implements OnInit {
   project;

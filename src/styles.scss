@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import './src/variables.scss';
+
 @font-face { 
     font-family: "T-star-regular";
     font-style: normal;
@@ -11,5 +13,12 @@
  body {
     //cursor: [url('путь к курсору'),]
     font-family: T-star-regular, Roboto, Arial, Helvetica,sans-serif;
-    color: rgb(81, 81, 81);
+    color: $main-color-text;
+
+    ::selection {
+      background: $selection-color;
+      color: $selection-text-color;
+      /* Safari */
+    }
+
  }

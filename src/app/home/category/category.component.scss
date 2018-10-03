@@ -12,19 +12,36 @@
                 background-color: white;
                 height: 35vh;
                 width: 100%;
-
+                animation-name: opacityImage;
+                animation-duration: 2s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                background: black;
+               
                 .project-image {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                     cursor: pointer;
-                //  transition: all 1s ease;
+                    transition: all 1s ease;
+                       
                 } 
 
                 .project-image:hover {
-                    opacity: 0.75;
+                    opacity: 0.7;
                 }
             }
         }
     }
 }
+
+@keyframes opacityImage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

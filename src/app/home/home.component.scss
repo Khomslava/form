@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 :host {
     height: 100%;
     width: 100%;
@@ -6,6 +8,8 @@
 .navbar {
     box-shadow: none;
     padding: 0;
+    color: $main-color-text;
+
 
     .container {
         padding: 0;
@@ -22,43 +26,26 @@
         padding-top: 2px;
         padding-bottom: 2px;
         background-color: white;
-        transition: none !important;
+        color: $main-color-text !important;
+        font-size: 14px;
 
-        &:hover{
-            color: black !important;
-        }
+     //  transition: none !important;
+
     }
 
     .ng-star-inserted {
         position: relative;
         right: -7px;
     }
-
-    // .collapse.show {
-    //     height: auto !important;
-    //     transition: none !important;
-
-    //     .nav {
-    //         margin: 0;
-    //     }
-    //     .nav-link {
-    //         transition: none !important;
-
-    //         font-size: 14px;
-    //     }
-    //     .nav-page {
-    //       margin-left: 10px;
-    //     }
-    // }
 }
 
-mdb-navbar-brand {
-    position: relative;
-    left: -12px;
-}
+// mdb-navbar-brand {
+//     position: relative;
+//     left: -12px;
+// }
 
 .header {
-
+    line-height: 60px;
    // height: 80px;
     .logo {
         cursor: pointer;
@@ -66,23 +53,25 @@ mdb-navbar-brand {
         outline: 0;
 
         .logo-img {
-            height: 80px;
-            width: 80px;
+            position: relative;
+            // left: -8px;
+            height: 35px;
+            width: 35px;
             object-fit: contain;
         }
 
         .logo-name {
- 
+            font-size: 16px;
+            margin-left: 8px;
+            
             .logo-name-form {
-                font-size: 30px;
-                line-height: 30px;
+              //  line-height: 30px;
             }
-            .logo-name-bureau
-            {
-                font-size: 20px;
-                line-height: 20px;
-                letter-spacing: 1.1px;
-                margin-left: 1px;
+            .logo-name-bureau {
+                margin-left: 5px;
+            //    line-height: 20px;
+             //   letter-spacing: 1.1px;
+             //   margin-left: 1px;
             }
         }
     }
@@ -109,16 +98,17 @@ mdb-navbar-brand {
         }
 
         .nav-page {
-            margin-left: 10px;
+            margin-left: 45px;
             cursor: pointer;
             text-decoration: none;
-            color: black;
+            color: $main-color-text;
+           transition: none !important;
         }
 
         .nav-page:hover {
             font-weight: 600;
             opacity: 1;
-            color: black;
+          //  color: black;
 
         }
 
@@ -131,7 +121,7 @@ mdb-navbar-brand {
         .choose-language {
             margin-left: 10px;
             cursor: pointer;
-            color: black;
+         //   color: black;
             background-color: white;
             border: 0;
         }
@@ -143,23 +133,26 @@ mdb-navbar-brand {
 }
 
 
-
 .mat-menu-header {
     min-width: 40px;
+    
+    
+    &.mat-menu-header-language { 
+        box-shadow: none !important;
+    }
     
     &.ng-trigger {
        min-width: 40px;
     }
 
+    
+
     button {
         height: 35px;
         border: none;
         outline: none;
-
-        // &:hover {
-        //   font-weight: 300;
-        // }
-
+        color: $main-color-text;
+        font-size: 14px;
     }
 
     .mat-menu-item{
@@ -180,10 +173,11 @@ mdb-navbar-brand {
     right: 20px;
     bottom: 50px;
     border: none;
-    font-size: 25px;
     z-index: 10;
     padding: 0;
     cursor: pointer;
+    background-color:white;
+
     
     &:active,
     &:focus {
@@ -191,13 +185,13 @@ mdb-navbar-brand {
       border: none;
     }
 
-    &:hover{
-        background-color:#e0e0e0;
-    }
+    // &:hover{
+    //     background-color:white;
+    // }
 
-    i {
-        font-size: 30px;
+    img {
+        height: 30px;
+        width: 30px;
         margin: auto;
-        padding-top: 3px;
     }
 }

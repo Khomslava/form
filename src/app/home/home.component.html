@@ -1,35 +1,3 @@
-<!-- <div class="header" fxLayout="row" fxLayoutAlign="space-between start">
-  <div class="logo" fxLayout="row" fxLayoutAlign="start center" routerLink="/main" [queryParams]="{lang: currentLanguage.id}">
-    <img src="../../assets/form_logo.jpg" class="logo-img" alt="Form">
-    <div class="logo-name" fxLayout="column" fxLayoutAlign="center stretch">
-      <span class="logo-name-form">FORM</span>
-      <div class="logo-name-bureau">bureau</div>
-    </div>
-  </div>
-  <div class="nav" fxLayout="row" fxLayoutAlign="end center">
-
-    <button mat-button class="select-button nav-page" [matMenuTriggerFor]="menuInfo">{{headerTitles?.info}}</button>
-    <mat-menu #menuInfo="matMenu" class="mat-menu-header">
-      <button mat-menu-item routerLink="/info" [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.about}}</button>
-      <button mat-menu-item [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.awards}}</button>
-      <button mat-menu-item [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.services}}</button>
-    </mat-menu>
-
-    <a routerLink="/interiors" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page">{{headerTitles?.interiors}}</a>
-    <a routerLink="/architecture" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page">{{headerTitles?.arhitecture}}</a>
-    <a routerLink="/products" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page">{{headerTitles?.products}}</a>
-    <a routerLink="/contacts" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page">{{headerTitles?.contacts}}</a>
-
-    <button mat-button class="nav-page select-button" [matMenuTriggerFor]="menuLang">{{currentLanguage.name}}
-    </button>
-    <mat-menu #menuLang="matMenu" class="mat-menu-header mat-menu-header-language"> 
-      <button mat-menu-item *ngFor="let lang of langs" (click)="changeLanguage(lang)">{{lang.name}}</button>
-    </mat-menu>
-
-  </div>
-</div> -->
-
-<!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-md lighten-5 navbar-light" class="header">
 
 
@@ -37,53 +5,42 @@
   <mdb-navbar-brand>
     <div class="logo" fxLayout="row" fxLayoutAlign="start center" routerLink="/main" [queryParams]="{lang: currentLanguage.id}">
       <img src="../../assets/form_logo.jpg" class="logo-img" alt="Form">
-      <div class="logo-name" fxLayout="column" fxLayoutAlign="center stretch">
+      <div class="logo-name" fxLayout="row" fxLayoutAlign="start center">
         <span class="logo-name-form">FORM</span>
         <div class="logo-name-bureau">bureau</div>
       </div>
     </div>
   </mdb-navbar-brand>
 
+
   <!-- Collapsible content -->
   <links>
 
     <!-- Links -->
 
-    <ul class="navbar-nav nav" >
-      <!-- <li class="nav-item">
-        <button mat-button class="select-button nav-page nav-link" [matMenuTriggerFor]="menuInfo">{{headerTitles?.info}}</button>
-        <mat-menu #menuInfo="matMenu" class="mat-menu-header">
-          <button mat-menu-item routerLink="/about" [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.about}}</button>
-          <button mat-menu-item routerLink="/services" [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.awards}}</button>
-          <button mat-menu-item routerLink="/awards" [queryParams]="{lang: currentLanguage.id}">{{headerTitles?.services}}</button>
-        </mat-menu>
-      </li> -->
+    <ul class="navbar-nav nav">
+
       <li class="nav-item">
-        <a routerLink="/about" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link"
-          mdbWavesEffect>{{headerTitles?.info}}</a>
+        <a routerLink="/about" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link" mdbWavesEffect>{{headerTitles?.info}}</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/interiors" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link"
-          mdbWavesEffect>{{headerTitles?.interiors}}</a>
+        <a routerLink="/interiors" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">{{headerTitles?.interiors}}</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/architecture" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link"
-          mdbWavesEffect>{{headerTitles?.arhitecture}}</a>
+        <a routerLink="/architecture" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">{{headerTitles?.arhitecture}}</a>
 
       </li>
       <li class="nav-item">
-        <a routerLink="/products" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link"
-          >{{headerTitles?.products}}</a>
+        <a routerLink="/products" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">
+          {{headerTitles?.products}}</a>
 
       </li>
       <li class="nav-item">
-        <a routerLink="/contacts" routerLinkActive="active"
-          [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link"
-            mdbWavesEffect>{{headerTitles?.contacts}}</a>
+        <a routerLink="/contacts" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">{{headerTitles?.contacts}}</a>
       </li>
       <li class="nav-item">
-        <button mat-button mdbWavesEffect class="nav-page select-button nav-link" [matMenuTriggerFor]="menuLang">{{currentLanguage.name}}
+        <button mat-button class="nav-page select-button nav-link" [matMenuTriggerFor]="menuLang">{{currentLanguage.name}}
         </button>
         <mat-menu #menuLang="matMenu" class="mat-menu-header mat-menu-header-language">
           <button mat-menu-item *ngFor="let lang of langs" (click)="changeLanguage(lang)">{{lang.name}}</button>
@@ -119,10 +76,9 @@
 <!--/.Navbar-->
 
 <go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [classNames]="'custom-class'">
-  <i class="material-icons">change_history</i>
+  <img src="../../assets/triangle.jpg"  alt="Up">
 
 </go-top-button>
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
-

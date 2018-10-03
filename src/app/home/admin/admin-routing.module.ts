@@ -6,7 +6,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 
 const routes: Routes = [
   {
-    path: 'changes', component: AdminComponent, children: [
+    path: '', component: AdminComponent, children: [
 
       { path: 'createproject', component: CreateProjectComponent },
       { path: 'createcategory', component: CreateCategoryComponent }

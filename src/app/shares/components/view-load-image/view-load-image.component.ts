@@ -49,6 +49,7 @@ export class ViewLoadImageComponent implements OnInit, OnDestroy {
 
   handleIntersect(entries, observer): void {
     entries.forEach((entry: IntersectionObserverEntry) => {
+     // console.log(entries);
       if (entry.isIntersecting) {
         this.inView = true;
         this.defaultInViewHandler(entry);
@@ -60,8 +61,6 @@ export class ViewLoadImageComponent implements OnInit, OnDestroy {
   }
 
   defaultInViewHandler(entry) {
-    console.log(this.once50PctVisible);
-    console.log(this.inView$.observers.length);
     if (this.once50PctVisible) {
       return false;
     }
@@ -69,19 +68,19 @@ export class ViewLoadImageComponent implements OnInit, OnDestroy {
     if (this.inView$.observers.length) {
       return false;
     }
+    console.log(entry.intersectionRatio);
     if (entry.intersectionRatio < 0.8) {
-      // let opacity = entry.intersectionRatio * (1 / 0.8);
-   //   let opacity = 1;
+    //  let opacity = entry.intersectionRatio * (1 / 0.8);
+      let opacity = entry.intersectionRatio;
       let blur = 20 - Math.floor(entry.intersectionRatio * 10) * 4;
     //  let filter = `blur(${blur}px)`;
       let filter = 'unset';
     //  Object.assign(entry.target.style, { opacity, filter });
-      Object.assign(entry.target.style, { filter });
+      console.log(opacity);
+      Object.assign(entry.target.style, { opacity, filter });
     } else {
-      console.log('100%');
       entry.target.style.opacity = 1;
       entry.target.style.filter = 'unset';
-
       this.once50PctVisible = true;
     }
   }
