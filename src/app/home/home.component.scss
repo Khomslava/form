@@ -39,14 +39,9 @@
     }
 }
 
-// mdb-navbar-brand {
-//     position: relative;
-//     left: -12px;
-// }
-
 .header {
     line-height: 60px;
-   // height: 80px;
+
     .logo {
         cursor: pointer;
         border: none;
@@ -134,11 +129,13 @@
 
 
 .mat-menu-header {
+
     min-width: 40px;
     
     
     &.mat-menu-header-language { 
         box-shadow: none !important;
+        background: white;
     }
     
     &.ng-trigger {
@@ -153,13 +150,24 @@
         outline: none;
         color: $main-color-text;
         font-size: 14px;
+        font-weight: 300px
     }
 
     .mat-menu-item{
         height: 35px;
         border: none;
         line-height: 35px;
+
+        &:hover {
+            background: white;
+        }
+
+        .lang-name:hover {
+            font-weight: 600;
+        }
+
     }
+
 
     .mat-menu-content:not(:empty) {
         padding: 0;
@@ -194,4 +202,27 @@
         width: 30px;
         margin: auto;
     }
+}
+
+.lang-ru {
+  .nav-page:hover {
+    font-weight: 300 !important;
+    color: #3d3d3d !important;
+    text-shadow: 0px 0px 0.5px #3d3d3d;
+  }
+
+    .lang-name:hover {
+        font-weight: 300 !important;
+        color: #3d3d3d !important;
+        text-shadow: 0px 0px 0.5px #3d3d3d;
+    }
+
+
+  .nav-page.active {
+    font-weight: 300 !important;
+    color: black !important;
+    text-shadow: 0px 0px 0.5px black;
+
+  }
+
 }

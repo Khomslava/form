@@ -1,5 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-md lighten-5 navbar-light" class="header">
-
+<mdb-navbar SideClass="navbar navbar-expand-lg lighten-5 navbar-light" class="header" [ngClass]="{'lang-ru': currentLanguage?.id === 1 }">
 
   <!-- Navbar brand -->
   <mdb-navbar-brand>
@@ -21,7 +20,7 @@
     <ul class="navbar-nav nav">
 
       <li class="nav-item">
-        <a routerLink="/about" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link" mdbWavesEffect>{{headerTitles?.info}}</a>
+        <a routerLink="/about" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">{{headerTitles?.info}}</a>
       </li>
       <li class="nav-item">
         <a routerLink="/interiors" routerLinkActive="active" [queryParams]="{lang: currentLanguage.id}" class="nav-page nav-link">{{headerTitles?.interiors}}</a>
@@ -43,24 +42,13 @@
         <button mat-button class="nav-page select-button nav-link" [matMenuTriggerFor]="menuLang">{{currentLanguage.name}}
         </button>
         <mat-menu #menuLang="matMenu" class="mat-menu-header mat-menu-header-language">
-          <button mat-menu-item *ngFor="let lang of langs" (click)="changeLanguage(lang)">{{lang.name}}</button>
+          <button mat-menu-item *ngFor="let lang of langs" (click)="changeLanguage(lang)">
+            <span class="lang-name">{{lang.name}}</span>
+          </button>
         </mat-menu>
       </li>
 
-      <!-- Dropdown -->
-      <!-- <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          Basic dropdown
-          <span class="caret"></span>
-        </a>
-        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
-          <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
-        </div>
-      </li> -->
+
 
     </ul>
 

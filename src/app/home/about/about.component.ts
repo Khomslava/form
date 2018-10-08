@@ -11,6 +11,7 @@ export class AboutComponent implements OnInit {
   languageId;
   abouts;
   about;
+  awards;
 
   constructor(private servicesService: ServicesService,
     private activatedRoute: ActivatedRoute,
@@ -29,6 +30,16 @@ export class AboutComponent implements OnInit {
       this.about = res[this.languageId];
       this.abouts = res;
     });
+    this.servicesService.getAwards().subscribe(res => {
+      console.log(res);
+      this.awards = res;
+     // this.about = res[this.languageId];
+     // this.abouts = res;
+    });
+  }
+
+  public goToProject(project: any) {
+    this.router.navigate(['/project', project.id], { queryParams: { lang: this.languageId } });
   }
 
 }

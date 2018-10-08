@@ -61,6 +61,13 @@ export class ServicesService {
       });
   }
 
+  public getAwards() {
+    return this.http.get(`${environment.firebaseConfig.databaseURL}/awards.json`, { observe: 'response' })
+      .map(res => {
+        return res.body;
+      });
+  }
+
   public getProjectTranslate() {
     return this.http.get(`${environment.firebaseConfig.databaseURL}/projectTranslate.json`, { observe: 'response' })
       .map(res => {

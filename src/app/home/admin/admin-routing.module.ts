@@ -6,19 +6,25 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 
 const routes: Routes = [
   {
-    path: '', component: AdminComponent, children: [
-
+    path: '',
+    component: AdminComponent,
+    children: [
       { path: 'createproject', component: CreateProjectComponent },
       { path: 'createcategory', component: CreateCategoryComponent }
-    ]},
+    ]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
   // { path: 'info', component: EditInfoComponent },
   // { path: 'about', component: EditAboutComponent },
   // { path: 'contacts', component: EditProjectComponent },
-  // {
-  //   path: '',
-  //   redirectTo: '/admin/changes',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: '/admin',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

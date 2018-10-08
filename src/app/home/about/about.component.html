@@ -1,6 +1,24 @@
-<div class="container">
-      <img class="main-image" [src]="about.photo" alt="Form bureau">
-  <div class="content-text">
+<div class="container" [ngClass]="{'lang-ru': languageId === '1' }">
+  <div class="about-company">
+    <img class="main-image" [src]="about.photo" alt="Form bureau">
+    <div class="content-text">
       {{about.description}}
+    </div>
   </div>
+
+  <div class="awards-wrapper">
+    <div *ngFor="let award of awards" class="award">
+      <div class="award-image-wrapper">
+        <img class="award-image" [src]="award.logo" [alt]="award.name">
+      </div>
+      <div class="award-list-description">
+        <div *ngFor="let project of award?.projects" class="award-description">
+          <span class="description">{{project?.content[languageId].text}} - </span>
+          <span class="name" (click)="goToProject(project)">        
+            {{project?.content[languageId].name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

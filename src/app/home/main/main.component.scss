@@ -5,15 +5,25 @@
         min-height: calc(100vh - 80px);
         max-height: calc(100vh - 80px);
         object-fit: cover;
-        animation-name: chengeImage;
+        animation-name: chengeImageForward;
         animation-duration: 3s;
         animation-iteration-count: 1;
-        animation-fill-mode: both;
+        animation-fill-mode: forwards;
         opacity: 0.2;
     } 
+
+
+    .carousel-fade .carousel-item {
+    }
+
+
+    .carousel-fade .carousel-item.active{
+    }
+
+
 }
 
-@keyframes chengeImage {
+ @keyframes chengeImageForward {
   0% {  
     opacity: 0.2;
   }

@@ -1,4 +1,3 @@
-import { AdminComponent } from './home/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import {
@@ -25,8 +24,9 @@ const routes: Routes = [
   { path: 'interiors', component: CategoryComponent, data: { 'id': 2 }},
   { path: 'products', component: CategoryComponent, data: { 'id': 3 }},
   { path: 'admin',
-    loadChildren: './home/admin/admin.module#AdminModule',
-    canActivate: [AuthGuard]},
+    loadChildren: './home/admin/admin.module#AdminModule'
+    // canActivate: [AuthGuard]
+  },
   { path: 'login', component: AuthComponent },
   {
     path: '',
@@ -37,8 +37,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, 
-  //  { enableTracing: true }
+  imports: [RouterModule.forRoot(routes,
+   { enableTracing: true }
   )],
   exports: [RouterModule]
 })

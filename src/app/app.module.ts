@@ -38,7 +38,6 @@ import { AboutComponent } from './home/about/about.component';
 import { ContactsComponent } from './home/contacts/contacts.component';
 import { MainComponent } from './home/main/main.component';
 import { ProjectComponent } from './home/category/project/project.component';
-import { AwardsComponent } from './home/awards/awards.component';
 import { AuthComponent } from './home/auth/auth.component';
 import { ViewLoadImageComponent } from './shares/components/view-load-image/view-load-image.component';
 
@@ -54,7 +53,6 @@ export const firebaseConfig = environment.firebaseConfig;
     ContactsComponent,
     MainComponent,
     ProjectComponent,
-    AwardsComponent,
     AuthComponent,
     ViewLoadImageComponent
   ],
